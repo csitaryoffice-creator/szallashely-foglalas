@@ -1,0 +1,12 @@
+/config/config.php
+/.env
+/storage/logs/*.log
+.DS_Store
+Thumbs.db
+/INSTALL_TOKEN.txt
+/remindersadora/
+/preview/*.png
+/preview/*.log
+/preview/*.pid
+/.vercel/
+/node_modules/

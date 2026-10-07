@@ -1,0 +1,6 @@
+INSTALL_TOKEN.txt
+remindersadora
+preview/*.png
+preview/*.log
+preview/*.pid
+storage/logs

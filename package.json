@@ -1,0 +1,14 @@
+{
+  "name": "ligetlak-foglalas",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "node --watch preview/functional-server.mjs",
+    "start": "node preview/functional-server.mjs",
+    "test": "node tests/preview-smoke.mjs"
+  }
+}
