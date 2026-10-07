@@ -36,6 +36,13 @@ assert(body.includes('Privát szauna és fürdődézsa') && !body.includes('data
 assert(body.includes('Már az aktuális hónapot látod') && body.includes('data-calendar-direction="next"'), 'Az aktuális hónapnál a visszalépés le van tiltva');
 assert(body.includes('data-booking-date-picker') && body.includes('data-min-date="2026-10-07"') && body.includes('data-max-date="2028-10-07"'), 'A kezdőnap korlátozott naptárválasztóval két éven belül közvetlenül kiválasztható');
 assert(body.indexOf('class="calendar-jump"') < body.indexOf('class="month-nav"') && !body.includes('data-booking-date-toggle') && !body.includes('▦'), 'A dátumugrás a hónapváltók fölött ikon nélkül jelenik meg');
+assert(body.includes('/assets/app.css?v=forest-hungary-25'), 'A mobilos javítás új gyorsítótár verzióval töltődik be');
+
+response = await get('/assets/app.css?v=forest-hungary-25');
+const css = await response.text();
+assert(response.status === 200 && css.includes('font-family: system-ui, -apple-system'), 'A teljes magyar karakterkészletű rendszerbetű aktív');
+assert(css.includes('.booking-form input[type="date"]') && css.includes('inline-size: 100%'), 'A publikus dátummezők mobilon a kereten belül maradnak');
+assert(css.includes('.admin-calendar-date-row > label') && css.includes('overflow: hidden'), 'Az admin dátumugrás vezérlői mobilon nem fedik egymást');
 
 response = await get('/?accommodation=1&month=2020-01');
 body = await response.text();

@@ -835,14 +835,14 @@ function adminPage(params) {
             <main class="admin-content">
                 <div class="admin-topbar">
                     <div><p class="eyebrow">Funkcionális preview</p><h1>${adminPageTitle(page)}</h1></div>
-                    <div class="admin-topbar-actions"><a class="button secondary admin-public-switch" href="/">Foglalási oldal</a><span>Helyi szerver · ${esc(adminUsername)}</span></div>
+                    <div class="admin-topbar-actions"><a class="button secondary admin-public-switch" href="/">Foglalási oldal</a><span>Bemutató rendszer · ${esc(adminUsername)}</span></div>
                 </div>
                 ${success ? `<div class="alert alert-success">${esc(success)}</div>` : ''}
                 ${error ? `<div class="alert alert-error">${esc(error)}</div>` : ''}
                 ${content}
             </main>
         </div>
-        <script src="/assets/app.js?v=forest-hungary-24"></script>
+        <script src="/assets/app.js?v=forest-hungary-25"></script>
     `);
 }
 
@@ -1794,7 +1794,7 @@ function validColor(value, fallback) {
 function layout(title, body) {
     const canonical = `http://127.0.0.1:${port}/`;
     const seoImage = `${canonical}assets/images/demo/ligetlak-hero-v4.jpg`;
-    return `<!doctype html><html lang="hu"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>${esc(title)}</title><meta name="description" content="${demoBrand} bemutató foglalási rendszer szállásválasztóval, naptárral és azonnali árösszegzéssel."><link rel="canonical" href="${canonical}"><meta property="og:type" content="website"><meta property="og:title" content="Foglalás: ${demoBrand}"><meta property="og:description" content="Válassz szállást, jelöld ki az időpontot, és próbáld ki a foglalási folyamatot."><meta property="og:url" content="${canonical}"><meta property="og:image" content="${seoImage}"><meta property="og:image:alt" content="Magyar erdei kabin professzionális fotón"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Foglalás: ${demoBrand}"><meta name="twitter:description" content="Bemutató online szállásfoglalás."><meta name="twitter:image" content="${seoImage}"><link rel="stylesheet" href="/assets/app.css?v=forest-hungary-24"></head><body>${body}</body></html>`;
+    return `<!doctype html><html lang="hu"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>${esc(title)}</title><meta name="description" content="${demoBrand} bemutató foglalási rendszer szállásválasztóval, naptárral és azonnali árösszegzéssel."><link rel="canonical" href="${canonical}"><meta property="og:type" content="website"><meta property="og:title" content="Foglalás: ${demoBrand}"><meta property="og:description" content="Válassz szállást, jelöld ki az időpontot, és próbáld ki a foglalási folyamatot."><meta property="og:url" content="${canonical}"><meta property="og:image" content="${seoImage}"><meta property="og:image:alt" content="Magyar erdei kabin professzionális fotón"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Foglalás: ${demoBrand}"><meta name="twitter:description" content="Bemutató online szállásfoglalás."><meta name="twitter:image" content="${seoImage}"><link rel="stylesheet" href="/assets/app.css?v=forest-hungary-25"></head><body>${body}</body></html>`;
 }
 
 function sendHtml(res, html, status = 200) {

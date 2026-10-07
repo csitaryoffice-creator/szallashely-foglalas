@@ -3894,3 +3894,80 @@ textarea {
         grid-template-columns: 1fr;
     }
 }
+
+/* Stable Hungarian typography and iOS form sizing */
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+}
+
+.public-shell h1,
+.public-shell h2,
+.public-shell h3,
+.stay-card strong,
+.hero-brand {
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+.hero-brand small,
+.booking-information-column h3 {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+}
+
+.booking-form,
+.booking-form .booking-details,
+.booking-form .grid,
+.booking-form .grid > label {
+    min-width: 0;
+    max-width: 100%;
+}
+
+.booking-form input[type="date"],
+.admin-calendar-date-row input[type="date"] {
+    display: block;
+    box-sizing: border-box;
+    inline-size: 100%;
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+}
+
+.admin-calendar-date-row {
+    grid-template-columns: minmax(0, 1fr) 96px;
+    width: 100%;
+    min-width: 0;
+}
+
+.admin-calendar-date-row > label {
+    min-width: 0;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.admin-calendar-date-row > button {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+}
+
+@media (max-width: 700px) {
+    .booking-form input[type="date"],
+    .admin-calendar-date-row input[type="date"] {
+        -webkit-appearance: none;
+        appearance: none;
+    }
+
+    .booking-details .grid.two > label,
+    .booking-details .grid.two input[type="date"] {
+        inline-size: 100%;
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    .admin-calendar-date-row {
+        grid-template-columns: minmax(0, 1fr) 92px;
+        gap: 8px;
+    }
+}
