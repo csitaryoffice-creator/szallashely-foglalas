@@ -26,6 +26,7 @@ assert(body.includes('Ligetlak Vendégház') && !body.includes('Pitypang Vendég
 assert(body.includes('Tölgy Kabin') && body.includes('Berek Kabin'), 'A két fiktív kabin megjelenik');
 assert((body.match(/class="stay-card [^"]*" href=/g) || []).length === 2, 'Pontosan két foglalható kabin látható');
 assert(body.includes('class="hero-admin-switch"') && body.includes('href="/admin/"'), 'A hero adminisztrációs váltógombot tartalmaz');
+assert(body.includes('/assets/images/csitary-office-favicon-32.png') && body.includes('/assets/images/csitary-office-apple-touch-icon.png'), 'A Csitary Office logó a böngészőikon és az iPhone ikon');
 
 response = await get('/?accommodation=1&choose=1');
 body = await response.text();
